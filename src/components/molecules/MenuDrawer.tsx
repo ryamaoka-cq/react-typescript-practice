@@ -11,7 +11,7 @@ type Props = {
   onClose: () => void;
   isOpen: boolean;
   onClickHome: () => void;
-  onclickUserManagement: () => void;
+  onClickUserManagement: () => void;
   onClickSetting: () => void;
 };
 
@@ -20,7 +20,7 @@ export const MenuDrawer: VFC<Props> = memo((props) => {
     onClose,
     isOpen,
     onClickHome,
-    onclickUserManagement,
+    onClickUserManagement,
     onClickSetting
   } = props;
   return (
@@ -28,9 +28,15 @@ export const MenuDrawer: VFC<Props> = memo((props) => {
       <DrawerOverlay>
         <DrawerContent>
           <DrawerBody p={0} bg="gray.100">
-            <Button w="100%">TOP</Button>
-            <Button w="100%">ユーザー一覧</Button>
-            <Button w="100%">設定</Button>
+            <Button w="100%" onClick={onClickHome}>
+              TOP
+            </Button>
+            <Button w="100%" onClick={onClickUserManagement}>
+              ユーザー一覧
+            </Button>
+            <Button w="100%" onClick={onClickSetting}>
+              設定
+            </Button>
           </DrawerBody>
         </DrawerContent>
       </DrawerOverlay>
